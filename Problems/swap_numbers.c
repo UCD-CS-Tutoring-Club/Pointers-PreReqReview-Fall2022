@@ -9,7 +9,7 @@ void cyclicSwap(int *a, int *b, int *c) {
      * 3. put c's value in a
      * 
      * Don't return anything
-    */
+     * */
 
 }
 

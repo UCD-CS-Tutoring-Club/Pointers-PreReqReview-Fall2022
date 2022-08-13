@@ -40,6 +40,7 @@ void prettyPrintMatrix(int** matrix, int num_rows, int num_cols) {
     }
     printf("]\n");
 }
+
 /**
  * Generates a random matrix
  * @param  {int} row   : number of rows, must be positive

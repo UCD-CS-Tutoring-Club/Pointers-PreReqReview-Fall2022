@@ -10,7 +10,8 @@ int** transpose(int** A, int num_rows, int num_cols) {
      * A[i][j] == B[j][i]
      *
      * Write a C program to find a transpose of a 2D matrix,
-     * you can assume that inputs are sanitized */
+     * you can assume that inputs are sanitized 
+     * */
 
     return NULL;
 }
