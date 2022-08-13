@@ -1,1 +1,7 @@
-# 36B-PrereqReview-Fall2022
+# ECS36B Review Session: Starter Code
+
+This repo contains the starter code for the 36B prerequisite review session
+
+## Requirements
+
+Working C compiler setup like `gcc`
