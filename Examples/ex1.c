@@ -1,6 +1,6 @@
 /**
  * We would like to perform the following operations:
- * 1. Evict whatever was there before and put number 12 in `house1.
+ * 1. Evict whatever was there before and put number 12 in `house1 with pointers
  * 2. Get the address of `house2`
  * Translate this into C code.
  * */

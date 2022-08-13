@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "helpers.h"
 
 int* dotProduct(int* v1, int v1_len, int* v2, int v2_len) {
     /**
@@ -22,8 +23,9 @@ int* dotProduct(int* v1, int v1_len, int* v2, int v2_len) {
 }
 
 int main() {
-    int a[] = {1, 2, 3};
-    int b[] = {4, 5, 6};
+    int a[3] = {1, 2, 3};
+    int b[3] = {4, 5, 6};
+
     // Delete this comment and write your driver code below
 
     return 0;

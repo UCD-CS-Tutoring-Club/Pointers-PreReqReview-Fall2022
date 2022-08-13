@@ -10,7 +10,7 @@ int** transpose(int** A, int num_rows, int num_cols) {
      * A[i][j] == B[j][i]
      *
      * Write a C program to find a transpose of a 2D matrix,
-     * you can assume that inputs are sanitized 
+     * you can assume that inputs are sanitized
      * */
 
     return NULL;
@@ -27,7 +27,8 @@ int main() {
     if (matrix != NULL) {
         prettyPrintMatrix(matrix, row, col);
         printf("Try to transpose...\n");
-        prettyPrintMatrix(transpose(matrix, row, col), col, row);
+        int** tranposed_matrix = transpose(matrix, row, col);
+        prettyPrintMatrix(tranposed_matrix, col, row);
     }
 
     // Clean everything up

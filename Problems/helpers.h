@@ -1,23 +1,24 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /**
  * Pretty prints a matrix, 1 row per line
- * @param  {int**} matrix : the matrix to print
- * @param  {int} num_rows : number of rows
- * @param  {int} num_cols : number of columns
- */
+ * @param matrix: the matrix to print
+ * @param num_rows: number of rows
+ * @param num_cols: number of columns
+ * */
 void prettyPrintMatrix(int** matrix, int num_rows, int num_cols) {
     if (matrix == NULL) {
-        printf("there's no matrix");
+        printf("There's no matrix\n");
         return;
     }
     if (num_rows <= 0) {
-        printf("row must be positive");
+        printf("row must be positive\n");
         return;
     }
     if (num_cols <= 0) {
-        printf("col must be positive");
+        printf("col must be positive\n");
         return;
     }
 
@@ -30,7 +31,7 @@ void prettyPrintMatrix(int** matrix, int num_rows, int num_cols) {
         for (int col = 0; col < num_cols; col++) {
             printf("%d", matrix[row][col]);
             if (col != num_cols - 1) {
-                printf(", ");
+                printf(",\t");
             }
         }
         printf("]");
@@ -43,21 +44,33 @@ void prettyPrintMatrix(int** matrix, int num_rows, int num_cols) {
 
 /**
  * Generates a random matrix
- * @param  {int} row   : number of rows, must be positive
- * @param  {int} col   : number of columns, must be positive
- * @param  {int} fixed : if true, generate the same matrix every time
- * @return {int**}     : pointer to the matrix on the heap
- */
+ * @param array: the array to print
+ * @param length: length of the array, must be positive
+ * */
+void prettyPrintArray(int* array, int length) {
+    if (array == NULL) {
+        printf("There's no array\n");
+        return;
+    }
+    prettyPrintMatrix(&array, 1, length);
+}
+/**
+ * Generates a random matrix
+ * @param  row: number of rows, must be positive
+ * @param  col: number of columns, must be positive
+ * @param  fixed: if true, generate the same matrix every time
+ * @return pointer to the matrix on the heap
+ * */
 int** randomMatrix(int row, int col, int fixed) {
     if (!fixed) {
         srand(time(NULL));
     }
     if (row <= 0) {
-        printf("row must be positive");
+        printf("row must be positive\n");
         return NULL;
     }
     if (col <= 0) {
-        printf("col must be positive");
+        printf("col must be positive\n");
         return NULL;
     }
 
@@ -70,8 +83,8 @@ int** randomMatrix(int row, int col, int fixed) {
     for (int i = 0; i < row; i++) {
         matrix[i] = (int*)malloc(sizeof(int) * col);
         for (int j = 0; j < col; j++) {
-            // random number in [0, 19]
-            matrix[i][j] = rand() % 20;
+            // random number in [-19, 19]
+            matrix[i][j] = ((int)pow(-1, rand() % 2)) * (rand() % 20);
         }
     }
 
