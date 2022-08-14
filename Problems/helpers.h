@@ -55,7 +55,7 @@ void prettyPrintMatrix(int** matrix, int num_rows, int num_cols) {
  * */
 void prettyPrintArray(int* array, int length) {
     if (array == NULL) {
-        printf("\x1B[31mError\x1B[0m: There's no array\n");
+        fprintf(stderr, "\x1B[31mError\x1B[0m: There's no array\n");
         return;
     }
     prettyPrintMatrix(&array, 1, length);
@@ -94,17 +94,17 @@ int** randomMatrix(int row, int col, int fixed, int seed_offset) {
         srand(time(NULL) + seed_offset);
     }
     if (row <= 0) {
-        printf("\x1B[31mError\x1B[0m: row must be positive\n");
+        fprintf(stderr, "\x1B[31mError\x1B[0m: row must be positive\n");
         return NULL;
     }
     if (col <= 0) {
-        printf("\x1B[31mError\x1B[0m: col must be positive\n");
+        fprintf(stderr, "\x1B[31mError\x1B[0m: col must be positive\n");
         return NULL;
     }
 
     int** matrix = (int**)malloc(sizeof(int*) * row);
     if (matrix == NULL) {
-        printf("\x1B[31mError\x1B[0m: Cannot allocate any more memory");
+        fprintf(stderr, "\x1B[31mError\x1B[0m: Cannot allocate any more memory");
         return NULL;
     }
 
@@ -128,6 +128,11 @@ int** randomMatrix(int row, int col, int fixed, int seed_offset) {
 Node* randomLinkedList(int length, int seed_offset) {
     srand(time(NULL) + seed_offset);
 
+    if (length <= 0){
+        fprintf(stderr, "\x1B[31mError\x1B[0m: length must be positive");
+        return NULL;
+    }
+
     Node* head = (Node*)malloc(sizeof(Node));
     Node* traversing_ptr = head;
 
@@ -144,6 +149,7 @@ Node* randomLinkedList(int length, int seed_offset) {
 
     return head;
 }
+
 /**
  * Frees a linked list on the heap
  * @param head: pointer to the list to free
