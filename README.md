@@ -7,7 +7,7 @@ This repo contains the starter code for the 36B prerequisite review session.
 Working C compiler setup like `gcc`
 
 
-# Links 
+## Links 🔗
 
 📚**Join The UCD CS Tutoring Discord!**
 https://bit.ly/-cs-tutoring-discord
