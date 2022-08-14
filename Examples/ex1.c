@@ -1,8 +1,8 @@
 /**
- * We would like to perform the following operations:
- * 1. Evict whatever was there before and put number 12 in `house1 with pointers
- * 2. Get the address of `house2`
- * Translate this into C code.
+ * Pointers: Example 1
+ *
+ * Translate the following into C code:
+ * Evict the current resident of `house1` (aka the current value) and put number 12 in `house1` using pointers.
  * */
 
 #include <stdio.h>
