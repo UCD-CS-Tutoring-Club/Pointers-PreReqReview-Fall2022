@@ -7,20 +7,30 @@
 int** transpose(int** A, int num_rows, int num_cols) {
     /**
      * The transpose, B, of a matrix A has the property:
-     * A[i][j] == B[j][i]
+     * A[i][j] == B[j][i] where i, j are positive integers
      *
      * Write a C program to find a transpose of a 2D matrix,
      * you can assume that inputs are sanitized
      * */
 
-    return NULL;
+    int** transposed_A = (int**)malloc(sizeof(int*) * num_cols);
+
+    for (int row = 0; row < num_cols; row++) {
+        transposed_A[row] = (int*)malloc(sizeof(int) * num_rows);
+        for (int col = 0; col < num_rows; col++) {
+            transposed_A[row][col] = A[col][row];
+        }
+    }
+
+    return transposed_A;
 }
 
 int main() {
-    int row = 3;
-    int col = 4;
+    int row = 2;
+    int col = 2;
+    int lock_randomizer = 0; // change this to 1 if you want a fixed matrix
 
-    int** matrix = randomMatrix(row, col, 1);
+    int** matrix = randomMatrix(row, col, lock_randomizer);
     if (matrix != NULL) {
         prettyPrintMatrix(matrix, row, col);
         printf("Try to transpose...\n");

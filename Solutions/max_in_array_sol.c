@@ -1,5 +1,8 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "helpers.h"
 
 typedef enum { SAFE = 0, BAD = 1 } STATUS;
 
@@ -13,21 +16,35 @@ STATUS findMax(int* array, int length, int* output) {
      * return BAD as the status if something is wrong with the params
      * Put the result in @param output
      * */
-    for (int i = 0; i < length; i++) {
-        printf("%d\n", array[i]);
+
+    if (array == NULL || length <= 0) {
+        return BAD;
     }
 
-    return BAD;
+    int curr_max = INT32_MIN;
+    for (int i = 0; i < length; i++) {
+        if (array[i] > curr_max) {
+            curr_max = array[i];
+        }
+    }
+
+    *output = curr_max;
+    return SAFE;
 }
 
 int main() {
-    // Driver code
-    int a[3] = {1, 2, 3};
-
+    int length = 10;
+    int lock_randomizer = 0; // change this to 1 if you want a fixed matrix
+    int* arr = randomMatrix(1, length, lock_randomizer)[0];
     int output;
 
-    if (findMax(a, 3, &output) == SAFE) {
+    printf("Generated Array:\n");
+    prettyPrintArray(arr, length);
+
+    if (findMax(arr, length, &output) == SAFE) {
         printf("%d\n", output);
+    } else {
+        printf("Something bad happened.\n");
     }
 
     return 0;
