@@ -35,7 +35,7 @@ STATUS findMax(int* array, int length, int* output) {
 int main() {
     int length = 10;
     int lock_randomizer = 0; // change this to 1 if you want a fixed matrix
-    int* arr = randomMatrix(1, length, lock_randomizer)[0];
+    int* arr = randomMatrix(1, length, lock_randomizer, 0)[0];
     int output;
 
     printf("Generated Array:\n");

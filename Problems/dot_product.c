@@ -24,8 +24,14 @@ int* dotProduct(int* v1, int v1_len, int* v2, int v2_len) {
 }
 
 int main() {
-    int a[3] = {1, 2, 3};
-    int b[3] = {4, 5, 6};
+    int length = 10;
+    int lock_randomizer = 0;  // change this to 1 if you want fixed arrays
+
+    int* a = randomMatrix(1, length, lock_randomizer, 0)[0];
+    int* b = randomMatrix(1, length, lock_randomizer, 1000000)[0];
+
+    prettyPrintArray(a, length);
+    prettyPrintArray(b, length);
 
     // Delete this comment and write your driver code below
 

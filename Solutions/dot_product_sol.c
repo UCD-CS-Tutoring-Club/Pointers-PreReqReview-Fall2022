@@ -39,10 +39,10 @@ int* dotProduct(int* v1, int v1_len, int* v2, int v2_len) {
 
 int main() {
     int length = 10;
-    int lock_randomizer = 0;  // change this to 1 if you want a fixed matrix
+    int lock_randomizer = 0;  // change this to 1 if you want fixed arrays
 
-    int* a = randomMatrix(1, length, lock_randomizer)[0];
-    int* b = randomMatrix(1, length, lock_randomizer)[0];
+    int* a = randomMatrix(1, length, lock_randomizer, 0)[0];
+    int* b = randomMatrix(1, length, lock_randomizer, 1000000)[0];
     int* dot_product = dotProduct(a, length, b, length);
 
     if (dot_product != NULL) {

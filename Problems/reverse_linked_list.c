@@ -14,11 +14,11 @@ Node* reverseLinkedList(Node* head) {
      * return a new list with reversed order
      *
      * EX.1:    4 -> 3 -> 5 -> NULL returns 5 -> 3 -> 4 -> NULL
-     * EX.2:    3 -> NULL returns 3
+     * EX.2:    3 -> NULL returns 3 -> NULL
      * EX.3:    NULL returns NULL
      * */
 
-    return head;
+    return NULL;
 }
 
 int main() {

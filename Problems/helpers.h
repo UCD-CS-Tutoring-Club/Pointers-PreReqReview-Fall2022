@@ -61,9 +61,9 @@ void prettyPrintArray(int* array, int length) {
  * @param  fixed: if true, generate the same matrix every time
  * @return pointer to the matrix on the heap
  * */
-int** randomMatrix(int row, int col, int fixed) {
+int** randomMatrix(int row, int col, int fixed, int seed_offset) {
     if (!fixed) {
-        srand(time(NULL));
+        srand(time(NULL) + seed_offset);
     }
     if (row <= 0) {
         printf("\x1B[31mError\x1B[0m: row must be positive\n");

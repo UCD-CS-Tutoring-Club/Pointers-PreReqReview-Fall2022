@@ -30,7 +30,7 @@ int main() {
     int col = 2;
     int lock_randomizer = 0; // change this to 1 if you want a fixed matrix
 
-    int** matrix = randomMatrix(row, col, lock_randomizer);
+    int** matrix = randomMatrix(row, col, lock_randomizer, 0);
     if (matrix != NULL) {
         prettyPrintMatrix(matrix, row, col);
         printf("Try to transpose...\n");
