@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+typedef struct node {
+    int value;
+    struct node* next;
+} Node;
+
 /**
  * Pretty prints a matrix, 1 row per line
  * @param matrix: the matrix to print
@@ -54,11 +60,33 @@ void prettyPrintArray(int* array, int length) {
     }
     prettyPrintMatrix(&array, 1, length);
 }
+
+/**
+ * Pretty prints a linked list
+ * @param head: head of the list, should not be NULL
+ * */
+void prettyPrintLinkedList(Node* head) {
+    if (head == NULL) {
+        fprintf(stderr, "\x1B[31mError\x1B[0m: There's no list\n");
+        return;
+    }
+
+    printf("[");
+    while (head != NULL) {
+        printf("%d", head->value);
+        if (head->next != NULL) {
+            printf(", ");
+        }
+        head = head->next;
+    }
+    printf("]\n");
+}
+
 /**
  * Generates a random matrix
- * @param  row: number of rows, must be positive
- * @param  col: number of columns, must be positive
- * @param  fixed: if true, generate the same matrix every time
+ * @param row: number of rows, must be positive
+ * @param col: number of columns, must be positive
+ * @param fixed: if true, generate the same matrix every time
  * @return pointer to the matrix on the heap
  * */
 int** randomMatrix(int row, int col, int fixed, int seed_offset) {
@@ -89,4 +117,41 @@ int** randomMatrix(int row, int col, int fixed, int seed_offset) {
     }
 
     return matrix;
+}
+
+/**
+ * Generates a random linked list
+ * @param length: length of the list
+ * @param seed_offset: offset for srand(), use different integers if calling
+ * this repeatedly
+ * */
+Node* randomLinkedList(int length, int seed_offset) {
+    srand(time(NULL) + seed_offset);
+
+    Node* head = (Node*)malloc(sizeof(Node));
+    Node* traversing_ptr = head;
+
+    // Generate random inputs
+    for (int i = 0; i < length; i++) {
+        traversing_ptr->value = ((int)pow(-1, rand() % 2)) * (rand() % 20);
+        if (i != length - 1) {
+            traversing_ptr->next = (Node*)malloc(sizeof(Node));
+            traversing_ptr = traversing_ptr->next;
+        } else {
+            traversing_ptr->next = NULL;
+        }
+    }
+
+    return head;
+}
+/**
+ * Frees a linked list on the heap
+ * @param head: pointer to the list to free
+ * */
+void freeLinkedList(Node* head) {
+    while (head != NULL) {
+        Node* curr = head;
+        head = head->next;
+        free(curr);
+    }
 }

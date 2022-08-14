@@ -9,8 +9,7 @@ STATUS findMax(int* array, int length, int* output) {
     /**
      * Given an array of integers, find the maximum value
      *
-     * you can assume that @param array will not have numbers less than
-     * -99999999
+     * you can assume that @param array will not have numbers less than -99999999
      * - or better, use the INT_MIN equivalent on your system
      * return BAD as the status if something is wrong with the params
      * Put the result in @param output

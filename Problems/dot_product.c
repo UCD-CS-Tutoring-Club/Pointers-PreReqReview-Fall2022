@@ -34,6 +34,7 @@ int main() {
     prettyPrintArray(b, length);
 
     // Delete this comment and write your driver code below
+    // Don't use the prettyPrintArray() function for this question
 
     return 0;
 }

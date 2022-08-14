@@ -1,12 +1,7 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
-typedef struct node {
-    int value;
-    struct node* next;
-} Node;
+#include "helpers.h"
 
 Node* reverseLinkedList(Node* head) {
     /**
@@ -37,42 +32,16 @@ Node* reverseLinkedList(Node* head) {
 }
 
 int main() {
-    // initialize rand()
-    srand(time(NULL));
+    int list_length = 10;
 
-    int list_length = 5;
-    Node* head = (Node*)malloc(sizeof(Node));
-    Node* traversing_ptr = head;
-
-    // Generate random inputs
-    for (int i = 0; i < list_length; i++) {
-        traversing_ptr->value = ((int)pow(-1, rand() % 2)) * (rand() % 20);
-        if (i != list_length - 1) {
-            traversing_ptr->next = (Node*)malloc(sizeof(Node));
-            traversing_ptr = traversing_ptr->next;
-        } else {
-            traversing_ptr->next = NULL;
-        }
-    }
-
-    // Reset traversing ptr
-    traversing_ptr = head;
-
+    Node* input_head = randomLinkedList(list_length, 0);
     printf("Original list:\n");
-    while (traversing_ptr != NULL) {
-        printf("%d\n", traversing_ptr->value);
-        traversing_ptr = traversing_ptr->next;
-    }
+    prettyPrintLinkedList(input_head);
 
-    printf("Reversed list\n");
-    Node* new_list = reverseLinkedList(head);
+    Node* reversed_head = reverseLinkedList(input_head);
+    printf("Reversed list:\n");
+    prettyPrintLinkedList(reversed_head);
 
-    // Reset traversing ptr
-    traversing_ptr = new_list;
-    while (traversing_ptr != NULL) {
-        printf("%d\n", traversing_ptr->value);
-        traversing_ptr = traversing_ptr->next;
-    }
-
+    freeLinkedList(reversed_head);
     return 0;
 }
