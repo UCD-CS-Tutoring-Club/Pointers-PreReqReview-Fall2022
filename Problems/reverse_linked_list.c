@@ -49,7 +49,7 @@ int main() {
         traversing_ptr = traversing_ptr->next;
     }
 
-    printf("Reversed list\n");
+    printf("Reversed list:\n");
     Node* new_list = reverseLinkedList(head);
 
     // Reset traversing ptr

@@ -13,9 +13,7 @@ STATUS findMax(int* array, int length, int* output) {
      * return BAD as the status if something is wrong with the params
      * Put the result in @param output
      * */
-    for (int i = 0; i < length; i++) {
-        printf("%d\n", array[i]);
-    }
+    
 
     return BAD;
 }
