@@ -10,10 +10,19 @@ int** transpose(int** A, int num_rows, int num_cols) {
      * A[i][j] == B[j][i]
      *
      * Write a C program to find a transpose of a 2D matrix,
-     * you can assume that inputs are sanitized
+     * You can assume that the inputs are valid
      * */
 
     return NULL;
+}
+
+STATUS deleteMatrix(int** matrix, int num_rows, int num_cols) {
+    /**
+     * Implement a function that correctly frees up space allocated for a matrix
+     * You can assume that the inputs are valid
+     * */
+
+    return BAD;
 }
 
 int main() {
@@ -28,11 +37,9 @@ int main() {
         prettyPrintMatrix(tranposed_matrix, col, row);
     }
 
-    // Clean everything up
-    for (int i = 0; i < row; i++) {
-        free(matrix[i]);
+    if (deleteMatrix(matrix, row, col) == SAFE) {
+        printf("Matrix deleted!\n");
     }
-    free(matrix);
 
     return 0;
 }

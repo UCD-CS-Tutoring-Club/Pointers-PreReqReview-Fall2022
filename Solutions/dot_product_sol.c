@@ -48,8 +48,10 @@ int main() {
     if (dot_product != NULL) {
         printf("Generated a = ");
         prettyPrintArray(a, length);
+
         printf("Generated b = ");
         prettyPrintArray(b, length);
+        
         printf("Dot product = ");
         prettyPrintArray(dot_product, length);
     }

@@ -9,10 +9,6 @@ typedef enum { SAFE = 0, BAD = 1 } STATUS;
 STATUS findMax(int* array, int length, int* output) {
     /**
      * Given an array of integers, find the maximum value
-     *
-     * you can assume that @param array will not have numbers less than
-     * -99999999
-     * - or better, use the INT_MIN equivalent on your system
      * return BAD as the status if something is wrong with the params
      * Put the result in @param output
      * */
@@ -21,7 +17,7 @@ STATUS findMax(int* array, int length, int* output) {
         return BAD;
     }
 
-    int curr_max = INT32_MIN;
+    int curr_max = array[0];
     for (int i = 0; i < length; i++) {
         if (array[i] > curr_max) {
             curr_max = array[i];
@@ -34,7 +30,7 @@ STATUS findMax(int* array, int length, int* output) {
 
 int main() {
     int length = 10;
-    int lock_randomizer = 0; // change this to 1 if you want a fixed matrix
+    int lock_randomizer = 0;  // change this to 1 if you want a fixed matrix
     int* arr = randomMatrix(1, length, lock_randomizer, 0)[0];
     int output;
 
