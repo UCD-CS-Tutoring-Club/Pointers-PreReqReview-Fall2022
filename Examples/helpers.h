@@ -30,7 +30,9 @@ void prettyPrintMatrix(int** matrix, int num_rows, int num_cols) {
         return;
     }
 
-    printf("[");
+    if (num_rows > 1) {
+        printf("[");
+    }
     for (int row = 0; row < num_rows; row++) {
         if (row != 0) {
             printf(" ");
@@ -47,7 +49,9 @@ void prettyPrintMatrix(int** matrix, int num_rows, int num_cols) {
             printf(",\n");
         }
     }
-    printf("]\n");
+    if (num_rows > 1) {
+        printf("]\n");
+    }
 }
 
 /**
