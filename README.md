@@ -10,11 +10,11 @@ Working C compiler setup like `gcc`
 
 `cd` into one of the 3 directories: `Examples`, `Problems`, `Solutions`
 
-```bash
+```plaintext
 gcc <the file you want to compile> helpers.c -Wall -o <output file name>
 ```
 
-$\uarr$ Dont forget the `helpers.c` file because it has all the code for input generation.
+↑ Dont forget the **`helpers.c`** file because it has all the code for input generation.
 
 ## Links 🔗
 
