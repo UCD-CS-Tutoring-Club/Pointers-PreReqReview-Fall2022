@@ -28,7 +28,7 @@ int** transpose(int** A, int num_rows, int num_cols) {
 int main() {
     int row = 2;
     int col = 2;
-    int lock_randomizer = 0; // change this to 1 if you want a fixed matrix
+    int lock_randomizer = 0;  // change this to 1 if you want a fixed matrix
 
     int** matrix = randomMatrix(row, col, lock_randomizer, 0);
     if (matrix != NULL) {
@@ -43,6 +43,10 @@ int main() {
         free(matrix[i]);
     }
     free(matrix);
+
+    int num = 10;
+    int* ptr = &num;
+    int value = *ptr;
 
     return 0;
 }

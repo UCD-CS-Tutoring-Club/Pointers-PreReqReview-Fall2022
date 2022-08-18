@@ -2,7 +2,7 @@
  * Pointers: Example 1
  *
  * Translate the following into C code:
- * 
+ *
  * Using the house on a street analogy,
  * given there already exist house1 and house2,
  * We would like to swap the residents (values) of these 2 houses.

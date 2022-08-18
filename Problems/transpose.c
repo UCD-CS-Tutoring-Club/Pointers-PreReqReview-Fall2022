@@ -28,8 +28,9 @@ STATUS deleteMatrix(int** matrix, int num_rows, int num_cols) {
 int main() {
     int row = 3;
     int col = 4;
-
-    int** matrix = randomMatrix(row, col, 1, 0);
+    int lock_randomizer = 0;
+    int** matrix = randomMatrix(row, col, lock_randomizer, 0);
+    
     if (matrix != NULL) {
         prettyPrintMatrix(matrix, row, col);
         printf("Try to transpose...\n");

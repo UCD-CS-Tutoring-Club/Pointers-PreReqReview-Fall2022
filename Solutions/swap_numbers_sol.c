@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void cyclicSwap(int *a, int *b, int *c) {
+void cyclicSwap(int* a, int* b, int* c) {
     if (a == NULL || b == NULL || c == NULL) {
-        fprintf(stderr, "\x1B[31mError\x1B[0m: None of the numbers should be NULL.");
+        fprintf(stderr,
+                "\x1B[31mError\x1B[0m: None of the numbers should be NULL.");
         return;
     }
 

@@ -8,7 +8,6 @@
  * */
 
 #include <stdio.h>
-
 #include "helpers.h"
 
 STATUS pushBack(int** array_ref, int* length_ref, int new_value) {

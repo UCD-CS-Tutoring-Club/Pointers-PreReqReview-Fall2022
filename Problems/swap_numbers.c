@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void cyclicSwap(int *a, int *b, int *c) {
+void cyclicSwap(int* a, int* b, int* c) {
     /**
      * Implement this function that will:
      * 1. put a's value in b
