@@ -1,6 +1,6 @@
-# ECS 36B Prerequisite Review: Starter Code
+# Pointers Prerequisite Review Session Starter Code
 
-This repo contains the starter code for the 36B prerequisite review session.
+This repo contains the starter code for the Pointers Prerequisite Review Session.
 
 ## System Requirements
 
